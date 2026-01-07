@@ -1,6 +1,6 @@
 {
   "name": "modular-framework-offline-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MFOG (Modular Framework Offline Generator) es una CLI rápida y modular para generar proyectos de React (JS/TS) y Next.js completamente offline, usando plantillas locales",
   "keywords": [
     "react",
