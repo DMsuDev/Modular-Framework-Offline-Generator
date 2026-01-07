@@ -18,8 +18,10 @@ npm install -g modular-framework-offline-generator
 ```
 Una vez instalado, podrás crear aplicaciones React o Next.js completamente offline
 
+---
+
 ### Uso
-Para ejecutar la app solo ejecuta en la temrinal:
+Para ejecutar la app solo ejecuta en la terminal:
 ```sh
 mfog
 ```
