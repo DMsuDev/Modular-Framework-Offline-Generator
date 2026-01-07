@@ -4,13 +4,13 @@
 Su objetivo es facilitar la creación de proyectos básicos sin necesidad de descargar plantillas desde internet.
 
 Este proyecto está inspirado en **CRAO** de Baronsindo.  
-Puedes ver el proyecto original aquí:  
-👉 [Repositorio de CRAO](https://github.com/Baronsindo/create-react-app-offline/tree/master)
+Puedes ver el proyecto original aquí: 
+[Repositorio de CRAO](https://github.com/Baronsindo/create-react-app-offline/tree/master)
 
 ---
 
 
-## 📦 Instalación del CLI
+## Instalación del CLI
 Para instalar el CLI por primera vez, ejecuta:
 
 ```sh
@@ -57,6 +57,6 @@ Inicia el entorno de desarrollo para comenzar a trabajar en tu aplicación.
 
 ---
 
-### 📜 Licencia
+### LICENCIA
 Este proyecto está distribuido bajo la licencia MIT.
 Consulta el archivo LICENSE para más detalles.
