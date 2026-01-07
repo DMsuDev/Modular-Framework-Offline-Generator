@@ -1,36 +1,60 @@
-## Modular Framework Offline Generator (MFOG)
-Este programa permite crear apliaciones React/Next con configuraciones pre-construidas localmente para proyectos basicos.
+# Modular Framework Offline Generator (MFOG)
 
-Para realizar este proyecto me inspire de CRAO por Baronsindo. [Enlace al proyecto original.](https://github.com/Baronsindo/create-react-app-offline/tree/master)
+**MFOG** es un generador offline que permite crear aplicaciones **React** o **Next.js** utilizando configuraciones preconstruidas y almacenadas localmente.  
+Su objetivo es facilitar la creación de proyectos básicos sin necesidad de descargar plantillas desde internet.
 
-### Instalar el CLI
-first time you need to install the CRAO CLI via this command, then after you'il be able to create React apps offline.
-```sh
-npm install -g create-react-app-offline
-```
+Este proyecto está inspirado en **CRAO** de Baronsindo.  
+Puedes ver el proyecto original aquí:  
+👉 [Repositorio de CRAO](https://github.com/Baronsindo/create-react-app-offline/tree/master)
 
-### Usage
-Very simple like drinking water
-```sh
-crao -n <app-name>
-```
-for example :
-```sh
-crao -n my-app
-```
+---
 
-It will create a directory called `my-app` inside the current folder.<br>
-Inside that directory, it will generate the initial project structure and install the transitive dependencies:
 
-No configuration or complicated folder structures, only the files you need to build your app.<br>
-Once the installation is done, you can open your project folder:
+## 📦 Instalación del CLI
+Para instalar el CLI por primera vez, ejecuta:
 
 ```sh
-cd my-app
+npm install -g modular-framework-offline-generator
+```
+Una vez instalado, podrás crear aplicaciones React o Next.js completamente offline
+
+### Uso
+Para ejecutar la app solo ejecuta en la temrinal:
+```sh
+mfog
 ```
 
-Inside the newly created project, you can run some built-in commands:
+El programa te pedirá un nombre para tu proyecto y creará un directorio con ese nombre dentro de la carpeta actual.
 
-### `npm start` or `yarn start`
- 
-Enjoy it.
+Dentro de ese directorio se generará:
+- La estructura inicial del proyecto
+- Los archivos esenciales
+- Las dependencias necesarias (instaladas localmente)
+
+No tendrás que preocuparte por configuraciones complejas ni estructuras innecesarias.
+Solo obtendrás lo que necesitas para comenzar a desarrollar tu aplicación.
+
+---
+### Acceder al proyecto generado
+
+Una vez finalizada la instalación, entra en la carpeta del proyecto:
+```sh
+cd nombre-de-tu-proyecto
+```
+
+---
+
+### Comandos disponibles
+Dentro del proyecto recién creado puedes ejecutar:
+
+```cmd
+npm run dev
+```
+
+Inicia el entorno de desarrollo para comenzar a trabajar en tu aplicación.
+
+---
+
+### 📜 Licencia
+Este proyecto está distribuido bajo la licencia MIT.
+Consulta el archivo LICENSE para más detalles.
