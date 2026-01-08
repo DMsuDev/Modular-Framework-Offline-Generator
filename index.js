@@ -14,7 +14,7 @@ import { highlightLog } from "./src/log.js";
 
 let msg = `${highlightLog("Modular Framework Offline Generator")}
 
-Gracias por usar MFOG por MDsuDev.`;
+Thank you for using MFOG, created by MDsuDev.`;
 
 async function run() {
   clearConsole();
@@ -23,17 +23,18 @@ async function run() {
 
   await waitTime(100);
 
-  const name = await askInput("Nombre del proyecto:", "my-app");
+  const name = await askInput("Enter the project name:", "my-app");
+  const version = await askInput("Enter the project version:", "0.1.0");
   const framework = await askSelection(
-    "¿Qué tipo de proyecto quieres crear?",
+    "Choose a framework for your project:",
     FRAMEWORK_CHOICES
   );
   const language = NEEDS_LANGUAGE.includes(framework)
-    ? await askSelection("¿Qué lenguaje quieres usar?", LANGUAGE_CHOICES)
+    ? await askSelection("Which language do you want to use?:", LANGUAGE_CHOICES)
     : "";
 
   const template = `${framework}${language}.7z`;
-  await generateProject(template, name);
+  await generateProject(template, name, version);
 }
 
 run();

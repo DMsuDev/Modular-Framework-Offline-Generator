@@ -1,6 +1,6 @@
 export function validateProjectName(input) {
-  if (!input || !input.trim()) return "El nombre no puede estar vacío.";
-  if (/\s/.test(input)) return "Evita espacios en el nombre del proyecto.";
+  if (!input || !input.trim()) return "The name cannot be empty.";
+  if (/\s/.test(input)) return "Avoid spaces in the project name.";
   return true;
 }
 

@@ -1,62 +1,62 @@
 # Modular Framework Offline Generator (MFOG)
 
-**MFOG** es un generador offline que permite crear aplicaciones **React** o **Next.js** utilizando configuraciones preconstruidas y almacenadas localmente.  
-Su objetivo es facilitar la creación de proyectos básicos sin necesidad de descargar plantillas desde internet.
+**MFOG** is an offline generator that allows you to create **React** or **Next.js** applications using pre‑built configurations stored locally.
 
-Este proyecto está inspirado en **CRAO** de Baronsindo.  
-Puedes ver el proyecto original aquí: 
-[Repositorio de CRAO](https://github.com/Baronsindo/create-react-app-offline/tree/master)
+Its goal is to simplify the creation of basic projects without needing to download templates from the internet.
 
----
+This project is inspired by **CRAO** by Baronsindo.
+You can view the original project here:
+[CRAO Repository](https://github.com/Baronsindo/create-react-app-offline/tree/master)
 
+## CLI Installation
 
-## Instalación del CLI
-Para instalar el CLI por primera vez, ejecuta:
+To install the CLI for the first time, run:
 
 ```sh
 npm install -g modular-framework-offline-generator
 ```
-Una vez instalado, podrás crear aplicaciones React o Next.js completamente offline
+Once installed, you’ll be able to create React or Next.js applications completely offline
 
 ---
 
-### Uso
-Para ejecutar la app solo ejecuta en la terminal:
+### Usage
+To run the app, simply execute in your terminal:
 ```sh
 mfog
 ```
 
-El programa te pedirá un nombre para tu proyecto y creará un directorio con ese nombre dentro de la carpeta actual.
+The program will ask you for a project name and will create a directory with that name inside the current folder.
 
-Dentro de ese directorio se generará:
-- La estructura inicial del proyecto
-- Los archivos esenciales
-- Las dependencias necesarias (instaladas localmente)
+Inside that directory, it will generate:
+- The initial project structure
+- Essential files
+- All required dependencies (installed locally)
 
-No tendrás que preocuparte por configuraciones complejas ni estructuras innecesarias.
-Solo obtendrás lo que necesitas para comenzar a desarrollar tu aplicación.
+You won’t need to worry about complex configurations or unnecessary boilerplate.
+You’ll get exactly what you need to start building your application.
+
 
 ---
-### Acceder al proyecto generado
+### Accessing the generated project
 
-Una vez finalizada la instalación, entra en la carpeta del proyecto:
+Once the installation is complete, enter the project folder:
 ```sh
-cd nombre-de-tu-proyecto
+cd your-project-name
 ```
 
 ---
 
-### Comandos disponibles
-Dentro del proyecto recién creado puedes ejecutar:
+### Available commands
+Inside the newly created project, you can run:
 
-```cmd
+```sh
 npm run dev
 ```
 
-Inicia el entorno de desarrollo para comenzar a trabajar en tu aplicación.
+This starts the development environment so you can begin working on your application.
 
 ---
 
-### LICENCIA
-Este proyecto está distribuido bajo la licencia MIT.
-Consulta el archivo LICENSE para más detalles.
+### LICENSE
+This project is distributed under the MIT license.
+Check the LICENSE file for more details
