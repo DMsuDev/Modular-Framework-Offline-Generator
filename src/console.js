@@ -1,56 +1,60 @@
 // figlet: genera texto ASCII artístico (banners grandes).
-import figlet from 'figlet';
+import figlet from "figlet";
 // boxen: dibuja cajas alrededor de texto. Perfecto para banners o avisos.
 import boxen from "boxen";
 // clear: limpia la terminal antes de mostrar contenido nuevo.
-import { clear } from 'node:console';
+import { clear } from "node:console";
 
-
-import { BOXEN_CONFIG } from './constants.js';
-import { passion } from 'gradient-string';
-import { waitTime, getTerminalSize } from './utils.js';
-import { infoLog } from './log.js';
+import { BOXEN_CONFIG } from "./constants.js";
+import { passion } from "gradient-string";
+import { waitTime, getTerminalSize } from "./utils.js";
+import { infoLog } from "./log.js";
 
 export function clearConsole() {
-    clear()
+  clear();
 }
 
-export async function banner(title = 'THIS IS A BANNER') {
-    const { width, height } = getTerminalSize();
-    const text = await figlet.text(title, {width: width});
-    console.log(passion(text));
+export async function banner(title = "THIS IS A BANNER") {
+  const { width, height } = getTerminalSize();
+  const text = await figlet.text(title, { width: width });
+  console.log(passion(text));
 }
 
 export function contentBox(message) {
-    const msgBox = boxen(
-        message, 
-        {
-            padding: BOXEN_CONFIG.padding,
-            margin: BOXEN_CONFIG.margin,
-            borderStyle: BOXEN_CONFIG.borderStyle,
-            borderColor: BOXEN_CONFIG.borderColor,
-            title: BOXEN_CONFIG.title,
-            titleAlignment: BOXEN_CONFIG.titleAlignment,
-            textAlignment: BOXEN_CONFIG.textAlignment,
-        }
-    );
+  const msgBox = boxen(message, {
+    padding: BOXEN_CONFIG.padding,
+    margin: BOXEN_CONFIG.margin,
+    borderStyle: BOXEN_CONFIG.borderStyle,
+    borderColor: BOXEN_CONFIG.borderColor,
+    title: BOXEN_CONFIG.title,
+    titleAlignment: BOXEN_CONFIG.titleAlignment,
+    textAlignment: BOXEN_CONFIG.textAlignment,
+  });
 
-    console.log(msgBox);
+  console.log(msgBox);
 }
 
-export async function successMSG(foldername) {
-    const cmds = [
-        ["Go to your project folder", `cd ${foldername}`],
-        ["Runs the app in development mode (Next/Vite)", "npm run dev"],
-        ["Runs the test watcher in an interactive mode.", "npm test"],
-        ["Build for production", "npm run build"]
-    ];
-    let output = infoLog("Enjoy, here are some useful commands.\n\n", true);
+export async function successMSG(foldername, template) {
+  if (!foldername || !template) return;
 
-    for (const [label, cmd] of cmds) {
-        output += `- ${label}\n${infoLog("        " + cmd, true)}\n\n`;
-    }
+  const useNpmStart =
+    template.includes("nextjs") || template.includes("angular");
 
-    await waitTime(100);
-    console.log(output);
+  const cmds = [
+    ["Go to your project folder", `cd ${foldername}`],
+    [
+      "Runs the app in development mode",
+      useNpmStart ? "npm start" : "npm run dev",
+    ],
+    ["Runs the test watcher in an interactive mode.", "npm test"],
+    ["Build for production", "npm run build"],
+  ];
+  let output = infoLog("Enjoy, here are some useful commands.\n\n", true);
+
+  for (const [label, cmd] of cmds) {
+    output += `- ${label}\n${infoLog("        " + cmd, true)}\n\n`;
+  }
+
+  await waitTime(100);
+  console.log(output);
 }

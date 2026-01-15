@@ -1,6 +1,6 @@
 {
   "name": "modular-framework-offline-generator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Modular CLI to create React and Next.js projects offline with local templates.",
   "keywords": [
     "react",
@@ -25,7 +25,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node ./index.js"
   },
   "dependencies": {
     "7zip-min": "^2.1.0",

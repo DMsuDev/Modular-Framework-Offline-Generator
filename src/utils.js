@@ -5,11 +5,11 @@ export function validateProjectName(input) {
 }
 
 export const waitTime = (ms = 100) =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 export function getTerminalSize() {
   return {
     width: process.stdout.columns,
-    height: process.stdout.rows
+    height: process.stdout.rows,
   };
 }

@@ -15,7 +15,11 @@ function updateJsonFile(filePath, updater) {
   return true;
 }
 
-export async function updatePackageJson(projectPath, projectName, projectVersion) {
+export async function updatePackageJson(
+  projectPath,
+  projectName,
+  projectVersion
+) {
   const pkgPath = join(projectPath, "package.json");
   const pkgLockPath = join(projectPath, "package-lock.json");
 

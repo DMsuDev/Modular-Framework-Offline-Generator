@@ -30,7 +30,10 @@ async function run() {
     FRAMEWORK_CHOICES
   );
   const language = NEEDS_LANGUAGE.includes(framework)
-    ? await askSelection("Which language do you want to use?:", LANGUAGE_CHOICES)
+    ? await askSelection(
+        "Which language do you want to use?:",
+        LANGUAGE_CHOICES
+      )
     : "";
 
   const template = `${framework}${language}.7z`;

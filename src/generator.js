@@ -10,26 +10,32 @@ import { successLog, highlightLog, infoLog } from "./log.js";
 import { updatePackageJson } from "./package-json.js";
 
 export async function generateProject(template, projectName, projectVersion) {
-  const msg = `Creating project ${highlightLog(projectName)} using template ${infoLog(template)}...\n`
+  const msg = `Creating project ${highlightLog(
+    projectName
+  )} using template ${infoLog(template)}...\n`;
   const spinner = ora(msg).start();
 
   const source = join(CONFIG.templatesDir, template);
   const destination = join(process.cwd(), projectName);
 
   try {
-      await unzip(source, destination);
-      await updatePackageJson(destination, projectName, projectVersion);
-      
-      spinner.succeed("Project created successfully!");
-      
-      clearConsole()
-      contentBox(successLog('Project Created successfully', true));
-      await successMSG(projectName);
+    await unzip(source, destination);
+    await updatePackageJson(destination, projectName, projectVersion);
 
+    spinner.succeed("Project created successfully!");
+
+    clearConsole();
+    contentBox(successLog("Project Created successfully", true));
+    await successMSG(projectName, template);
   } catch (err) {
-      spinner.fail("Error creating project");
-      clearConsole()
-      contentBox(highlightLog('Something bad happend here is the error msg :\n\n\n' + err, true));
+    spinner.fail("Error creating project");
+    clearConsole();
+    contentBox(
+      highlightLog(
+        "Something bad happend here is the error msg :\n\n\n" + err,
+        true
+      )
+    );
   }
 }
 
@@ -39,7 +45,7 @@ export async function generateProject(template, projectName, projectVersion) {
  */
 async function unzip(source, destination) {
   // Validar que la plantilla existe
-  if (!fs.existsSync(source)) 
+  if (!fs.existsSync(source))
     throw new Error(`La plantilla no existe: ${source}`);
 
   if (fs.existsSync(destination))
