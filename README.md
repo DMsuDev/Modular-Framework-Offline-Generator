@@ -22,6 +22,10 @@
 
 Its goal is to simplify the creation of basic projects without downloading templates from the internet.
 
+<p align="center">
+  <img src="assets/app.png" width="600" alt="MFOG App Preview">
+</p>
+
 > This project is inspired by **CRAO** by **Baronsindo**.  
 > You can view the original project here:  
 > [CRAO Repository](https://github.com/Baronsindo/create-react-app-offline/tree/master)
@@ -81,12 +85,24 @@ npm start
 
 ## 🧩Frameworks
 
-| Name    | Version |
-| ------- | ------- |
-| React   | ^19.2.0 |
-| Vue     | ^3.5.26 |
-| Next.js | 16.1.1  |
-| Angular | 21.1.0  |
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+  <div style="text-align:center;">
+    <img src="assets/Vue.png" width="300"/>
+    <div><strong>Vue</strong><br>v3.5.26</div>
+  </div>
+  <div style="text-align:center;">
+    <img src="assets/React.png" width="300"/>
+    <div><strong>React</strong><br>v19.2.0</div>
+  </div>
+  <div style="text-align:center;">
+    <img src="assets/Angular.png" width="300"/>
+    <div><strong>Angular</strong><br>v21.1.0</div>
+  </div>
+  <div style="text-align:center;">
+    <img src="assets/Next.png" width="300"/>
+    <div><strong>Next.js</strong><br>v16.1.1</div>
+  </div>
+</div>
 
 ## 📝 License
 
