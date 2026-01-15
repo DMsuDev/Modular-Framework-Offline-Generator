@@ -12,18 +12,19 @@
 - [⚙️ CLI Installation](#cli-installation)
 - [🚀 Usage](#-usage)
 - [📂 Accessing the generated project](#-accessing-the-generated-project)
-- [🛠️ Available commands](#available-commands)
+- [🛠️ Available commands](#commands)
+- [🧩 Frameworks](#frameworks)
 - [📝 License](#-license)
 
 ## ✨ About MFOG
 
-**MFOG** is an offline generator that allows you to quickly create **React** or **Next.js** applications using pre‑built local templates.
+**MFOG** is an offline generator that allows you to quickly create applications using pre‑built local templates.
 
 Its goal is to simplify the creation of basic projects without downloading templates from the internet.
 
-This project is inspired by **CRAO** by Baronsindo.  
-You can view the original project here:  
-[CRAO Repository](https://github.com/Baronsindo/create-react-app-offline/tree/master)
+> This project is inspired by **CRAO** by **Baronsindo**.  
+> You can view the original project here:  
+> [CRAO Repository](https://github.com/Baronsindo/create-react-app-offline/tree/master)
 
 ## CLI Installation
 
@@ -62,7 +63,7 @@ Once the installation is complete, enter the project folder:
 cd your-project-name
 ```
 
-## Available commands
+## Commands
 
 Inside the newly created project, you can run:
 
@@ -71,6 +72,21 @@ npm run dev
 ```
 
 This starts the development environment so you can begin working on your application.
+
+If you created a **Vue.js** or **Next.js** project, you need to run the following command:
+
+```sh
+npm start
+```
+
+## 🧩Frameworks
+
+| Name    | Version |
+| ------- | ------- |
+| React   | ^19.2.0 |
+| Vue     | ^3.5.26 |
+| Next.js | 16.1.1  |
+| Angular | 21.1.0  |
 
 ## 📝 License
 
