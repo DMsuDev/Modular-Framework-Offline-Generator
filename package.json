@@ -1,6 +1,6 @@
 {
   "name": "modular-framework-offline-generator",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Modular CLI for creating projects from multiple frameworks using offline local templates.",
   "keywords": [
     "react",
@@ -15,8 +15,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DMsuDev/Modular-Framework-Offline-Generator"
+    "url": "https://github.com/DMsuDev/Modular-Framework-Offline-Generator.git"
   },
+  "bugs": {
+    "url": "https://github.com/DMsuDev/Modular-Framework-Offline-Generator/issues"
+  },
+  "homepage": "https://github.com/DMsuDev/Modular-Framework-Offline-Generator#readme",
   "bin": {
     "mfog": "./index.js"
   },
