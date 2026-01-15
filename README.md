@@ -87,19 +87,19 @@ npm start
 
 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
   <div style="text-align:center;">
-    <img src="assets/Vue.png" width="300"/>
+    <img src="assets/Vue.png" width="350"/>
     <div><strong>Vue</strong><br>v3.5.26</div>
   </div>
   <div style="text-align:center;">
-    <img src="assets/React.png" width="300"/>
+    <img src="assets/React.png" width="350"/>
     <div><strong>React</strong><br>v19.2.0</div>
   </div>
   <div style="text-align:center;">
-    <img src="assets/Angular.png" width="300"/>
+    <img src="assets/Angular.png" width="350"/>
     <div><strong>Angular</strong><br>v21.1.0</div>
   </div>
   <div style="text-align:center;">
-    <img src="assets/Next.png" width="300"/>
+    <img src="assets/Next.png" width="350"/>
     <div><strong>Next.js</strong><br>v16.1.1</div>
   </div>
 </div>
