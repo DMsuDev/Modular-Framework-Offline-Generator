@@ -4,7 +4,7 @@ import { passion } from "gradient-string";
 import chalk from "chalk";
 
 import { BOXEN_CONFIG } from "./config/boxen.js";
-import { waitTime, getTerminalSize } from "./utils.js";
+import { waitTime, getTerminalSize } from "./console.jsd";
 
 /**
  * Displays a large, colorful ASCII banner
