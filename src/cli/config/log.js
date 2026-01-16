@@ -1,17 +1,19 @@
-// chalk: colorea texto en la terminal. Ideal para resaltar mensajes.
 import chalk from "chalk";
 
-export const error = (msg, bold = false) =>
-  bold ? chalk.red.bold(msg) : chalk.red(msg);
+const createLogger = (colorFn, defaultBold = false) => {
+  return (message, bold = defaultBold) => {
+    const fn = bold ? colorFn.bold : colorFn;
+    return fn(message);
+  };
+};
 
-export const success = (msg, bold = false) =>
-  bold ? chalk.greenBright.bold(msg) : chalk.greenBright(msg);
+// Loggers main
+export const error = createLogger(chalk.red, true);
+export const success = createLogger(chalk.greenBright);
+export const warn = createLogger(chalk.yellow, true);
+export const info = createLogger(chalk.cyan);
+export const highlight = createLogger(chalk.white.bold);
 
-export const warning = (msg, bold = false) =>
-  bold ? chalk.yellow.bold(msg) : chalk.yellow(msg);
-
-export const info = (msg, bold = false) =>
-  bold ? chalk.cyan.bold(msg) : chalk.cyan(msg);
-
-export const highlight = (msg, bold = false) =>
-  bold ? chalk.white.bold(msg) : chalk.white(msg);
+export const debug = createLogger(chalk.gray);
+export const important = createLogger(chalk.magentaBright.bold);
+export const dim = createLogger(chalk.gray.dim);
