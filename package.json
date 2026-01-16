@@ -1,17 +1,16 @@
 {
   "name": "modular-framework-offline-generator",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Modular CLI for creating projects from multiple frameworks using offline local templates.",
   "keywords": [
     "react",
-    "git",
     "react-app",
     "create-react-app",
-    "node",
-    "javascript",
     "offline",
     "next",
-    "nextjs"
+    "nextjs",
+    "vue",
+    "angular"
   ],
   "repository": {
     "type": "git",
