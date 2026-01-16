@@ -1,22 +1,21 @@
 #!/usr/bin/env node
-// Permite ejecutar este archivo como un comando global en la terminal.
 
 import { askSelection, askInput } from "./cli/prompts.js";
 import { generateProject } from "./core/generator.js";
-import { contentBox, banner } from "./cli/banner.js";
+import { contentBox, banner, showSuccessInstructions } from "./cli/banner.js";
 import { clearConsole, waitTime } from "./cli/console.js";
 import {
   FRAMEWORK_CHOICES,
   LANGUAGE_CHOICES,
   NEEDS_LANGUAGE,
 } from "./cli/config/constants.js";
-import { highlight } from "./cli/config/log.js";
+import { highlight, success, error } from "./cli/config/log.js";
 
 let msg = `${highlight("Modular Framework Offline Generator")}
 
 Thank you for using MFOG, created by MDsuDev.`;
 
-async function run() {
+async function main() {
   clearConsole();
   await banner("CREATE APP OFFLINE");
   contentBox(msg);
@@ -36,8 +35,16 @@ async function run() {
       )
     : "";
 
-  const template = `${framework}${language}.7z`;
-  await generateProject(template, name, version);
+  await generateProject({ name, version, framework, language });
+
+  clearConsole();
+
+  contentBox(success("Project Created successfully", true));
+
+  await showSuccessInstructions(name, framework + (language || ""));
 }
 
-run();
+main().catch((err) => {
+  console.error("Error:", error(err.message));
+  process.exit(1);
+});

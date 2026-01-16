@@ -17,10 +17,8 @@ export const BOXEN_CONFIG = {
   textAlignment: "center", // 'left' | 'right' | 'center';
 };
 
-export const CONFIG = {
+export const paths = {
   templatesDir: join(__dirname, "../../..", "templates"),
-  appName: "MFOG",
-  version: "1.0.0",
 };
 
 export const FRAMEWORK_CHOICES = [
