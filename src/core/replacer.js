@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import chalk from "chalk";
-import { error } from "./log.js";
+import { error } from "../cli/config/log.js";
 
 /**
  * Updates name and version in package.json and (if exists) package-lock.json

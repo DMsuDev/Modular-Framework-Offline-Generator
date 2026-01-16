@@ -18,7 +18,7 @@ export const BOXEN_CONFIG = {
 };
 
 export const CONFIG = {
-  templatesDir: join(__dirname, "..", "templates"),
+  templatesDir: join(__dirname, "../../..", "templates"),
   appName: "MFOG",
   version: "1.0.0",
 };

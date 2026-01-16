@@ -22,14 +22,14 @@
   },
   "homepage": "https://github.com/DMsuDev/Modular-Framework-Offline-Generator#readme",
   "bin": {
-    "mfog": "./index.js"
+    "mfog": "./src/index.js"
   },
   "license": "MIT",
   "author": "DMsuDev",
   "type": "module",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "run": "node ./index.js"
+    "run": "node ./src/index.js"
   },
   "dependencies": {
     "7zip-min": "^2.1.0",

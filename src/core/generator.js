@@ -4,9 +4,10 @@ import _7z from "7zip-min";
 
 import { join } from "node:path";
 
-import { CONFIG } from "./constants.js";
-import { clearConsole, contentBox, successMSG } from "./console.js";
-import { success, highlight, info } from "./log.js";
+import { CONFIG } from "../cli/config/constants.js";
+import { contentBox, showSuccessInstructions } from "../cli/banner.js";
+import { clearConsole } from "../cli/console.js";
+import { success, highlight, info } from "../cli/config/log.js";
 import { updatePackageFiles } from "./replacer.js";
 import { extractTemplate } from "./extractor.js";
 
@@ -27,7 +28,7 @@ export async function generateProject(template, projectName, projectVersion) {
 
     clearConsole();
     contentBox(success("Project Created successfully", true));
-    await successMSG(projectName, template);
+    await showSuccessInstructions(projectName, template);
   } catch (err) {
     spinner.fail("Error creating project");
     clearConsole();

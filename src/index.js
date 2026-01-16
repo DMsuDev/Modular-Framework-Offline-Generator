@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 // Permite ejecutar este archivo como un comando global en la terminal.
 
-import { askSelection, askInput } from "./src/prompts.js";
-import { generateProject } from "./src/generator.js";
-import { clearConsole, contentBox, banner } from "./src/console.js";
+import { askSelection, askInput } from "./cli/prompts.js";
+import { generateProject } from "./core/generator.js";
+import { contentBox, banner } from "./cli/banner.js";
+import { clearConsole, waitTime } from "./cli/console.js";
 import {
   FRAMEWORK_CHOICES,
   LANGUAGE_CHOICES,
   NEEDS_LANGUAGE,
-} from "./src/constants.js";
-
-import { waitTime } from "./src/utils.js";
-import { highlight } from "./src/log.js";
+} from "./cli/config/constants.js";
+import { highlight } from "./cli/config/log.js";
 
 let msg = `${highlight("Modular Framework Offline Generator")}
 
