@@ -14,9 +14,8 @@ export const FRAMEWORK_CHOICES = [
     name: chalk.white("Next.js"),
     value: "nextjs",
     description: chalk.whiteBright(
-      "Modern Next.js starter with TailwindCSS, NextAuth.js, Prisma + PostgreSQL.\n\n" +
-        "Comes with full authentication flow, type-safe database access, server & client components, " +
-        "and a clean, performant, responsive foundation ready for production."
+        "Modern Next.js starter with React, TypeScript, TailwindCSS, and ESLint.\n\n" +
+        "A clean, fast, and scalable foundation using the App Router and the latest React features."
     ),
   },
   new Separator(),
@@ -24,8 +23,8 @@ export const FRAMEWORK_CHOICES = [
     name: chalk.greenBright("Vue.js"),
     value: "vue-vite",
     description: chalk.greenBright(
-      "Vue 3 + Vite starter template with Vue Router.\n\n" +
-        "Ready for fast development with ESLint + Prettier, full TypeScript support (Volar + vue-tsc), " +
+      "Lightweight Vue 3 + Vite starter template with Vue Router.\n\n" +
+        "Ready for fast development with ESLint + Prettier," +
         "modern composition API patterns, and excellent Node 20+ compatibility."
     ),
   },
