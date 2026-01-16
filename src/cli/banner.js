@@ -3,7 +3,7 @@ import boxen from "boxen";
 import { passion } from "gradient-string";
 import chalk from "chalk";
 
-import { BOXEN_CONFIG } from "./config/constants.js";
+import { BOXEN_CONFIG } from "./config/boxen.js";
 import { waitTime, getTerminalSize } from "./utils.js";
 
 /**

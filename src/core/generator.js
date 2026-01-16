@@ -5,7 +5,7 @@ import ora from "ora";
 import { error } from "../cli/config/log.js";
 import { extractTemplate } from "./extractor.js";
 import { updatePackageFiles } from "./replacer.js";
-import { paths } from "../cli/config/constants.js";
+import { paths } from "../cli/config/paths.js";
 
 /**
  * Main function that generates the complete project
