@@ -8,7 +8,7 @@ import { clear } from "node:console";
 import { BOXEN_CONFIG } from "./constants.js";
 import { passion } from "gradient-string";
 import { waitTime, getTerminalSize } from "./utils.js";
-import { infoLog } from "./log.js";
+import { info } from "./log.js";
 
 export function clearConsole() {
   clear();
@@ -49,10 +49,10 @@ export async function successMSG(foldername, template) {
     ["Runs the test watcher in an interactive mode.", "npm test"],
     ["Build for production", "npm run build"],
   ];
-  let output = infoLog("Enjoy, here are some useful commands.\n\n", true);
+  let output = info("Enjoy, here are some useful commands.\n\n", true);
 
   for (const [label, cmd] of cmds) {
-    output += `- ${label}\n${infoLog("        " + cmd, true)}\n\n`;
+    output += `- ${label}\n${info("        " + cmd, true)}\n\n`;
   }
 
   await waitTime(100);

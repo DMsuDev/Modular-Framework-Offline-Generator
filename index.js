@@ -9,10 +9,11 @@ import {
   LANGUAGE_CHOICES,
   NEEDS_LANGUAGE,
 } from "./src/constants.js";
-import { waitTime } from "./src/utils.js";
-import { highlightLog } from "./src/log.js";
 
-let msg = `${highlightLog("Modular Framework Offline Generator")}
+import { waitTime } from "./src/utils.js";
+import { highlight } from "./src/log.js";
+
+let msg = `${highlight("Modular Framework Offline Generator")}
 
 Thank you for using MFOG, created by MDsuDev.`;
 

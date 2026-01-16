@@ -6,13 +6,13 @@ import { join } from "node:path";
 
 import { CONFIG } from "./constants.js";
 import { clearConsole, contentBox, successMSG } from "./console.js";
-import { successLog, highlightLog, infoLog } from "./log.js";
-import { updatePackageJson } from "./package-json.js";
+import { success, highlight, info } from "./log.js";
+import { updatePackageFiles } from "./replacer.js";
 
 export async function generateProject(template, projectName, projectVersion) {
-  const msg = `Creating project ${highlightLog(
+  const msg = `Creating project ${highlight(
     projectName
-  )} using template ${infoLog(template)}...\n`;
+  )} using template ${info(template)}...\n`;
   const spinner = ora(msg).start();
 
   const source = join(CONFIG.templatesDir, template);
@@ -20,18 +20,18 @@ export async function generateProject(template, projectName, projectVersion) {
 
   try {
     await unzip(source, destination);
-    await updatePackageJson(destination, projectName, projectVersion);
+    await updatePackageFiles(destination, projectName, projectVersion);
 
     spinner.succeed("Project created successfully!");
 
     clearConsole();
-    contentBox(successLog("Project Created successfully", true));
+    contentBox(success("Project Created successfully", true));
     await successMSG(projectName, template);
   } catch (err) {
     spinner.fail("Error creating project");
     clearConsole();
     contentBox(
-      highlightLog(
+      highlight(
         "Something bad happend here is the error msg :\n\n\n" + err,
         true
       )
