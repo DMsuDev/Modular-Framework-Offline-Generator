@@ -70,11 +70,11 @@ export async function showSuccessInstructions(foldername, template) {
     },
   ];
 
-  console.log(chalk.bold("Next steps:\n"));
+  let output = chalk.bold("Next steps:\n");
 
   commands.forEach(({ label, cmd }) => {
-    console.log(`  ${chalk.blueBright(label)}`);
-    console.log(`  ${chalk.gray("→")} ${chalk.greenBright(cmd)}\n`);
+    output += `\n  ${chalk.blueBright(label)}\n`;
+    output += `  ${chalk.gray("→")} ${chalk.greenBright(cmd)}\n`;
   });
 
   // Small delay for better visual flow
