@@ -8,6 +8,7 @@ import { CONFIG } from "./constants.js";
 import { clearConsole, contentBox, successMSG } from "./console.js";
 import { success, highlight, info } from "./log.js";
 import { updatePackageFiles } from "./replacer.js";
+import { extractTemplate } from "./extractor.js";
 
 export async function generateProject(template, projectName, projectVersion) {
   const msg = `Creating project ${highlight(
@@ -19,7 +20,7 @@ export async function generateProject(template, projectName, projectVersion) {
   const destination = join(process.cwd(), projectName);
 
   try {
-    await unzip(source, destination);
+    await extractTemplate(source, destination);
     await updatePackageFiles(destination, projectName, projectVersion);
 
     spinner.succeed("Project created successfully!");
@@ -37,24 +38,4 @@ export async function generateProject(template, projectName, projectVersion) {
       )
     );
   }
-}
-
-/**
- * Descomprime una plantilla .7z en una carpeta destino
- * y devuelve la ruta del proyecto creado.
- */
-async function unzip(source, destination) {
-  // Validar que la plantilla existe
-  if (!fs.existsSync(source))
-    throw new Error(`La plantilla no existe: ${source}`);
-
-  if (fs.existsSync(destination))
-    throw new Error(`La carpeta destino ya existe: ${destination}`);
-
-  return new Promise((resolve, reject) => {
-    _7z.unpack(source, destination, (err, result) => {
-      if (err) reject(err);
-      else resolve(result); // devolvemos la ruta del proyecto
-    });
-  });
 }
