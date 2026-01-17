@@ -23,7 +23,7 @@
 Its goal is to simplify the creation of basic projects without downloading templates from the internet.
 
 <p align="center">
-  <img src="assets/app.png" width="600" alt="MFOG App Preview">
+  <img src="assets/app.gif" width="600" alt="MFOG App Preview">
 </p>
 
 > This project is inspired by **CRAO** by **Baronsindo**.  
