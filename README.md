@@ -4,6 +4,10 @@
 
 [![Node.js](https://img.shields.io/badge/Runtime-Node.js-339933?style=flat&logo=node.js)](https://nodejs.org/)
 [![Published on NPM](https://img.shields.io/npm/v/modular-framework-offline-generator??style=flat&logo=npm)](https://www.npmjs.com/package/modular-framework-offline-generator)
+[![Vue.js](https://img.shields.io/badge/Framework-Vue-4FC08D?style=flat&logo=vue.js&logoColor=white)](https://vuejs.org/)
+[![Angular](https://img.shields.io/badge/Framework-Angular-DD0031?style=flat&logo=angular&logoColor=white)](https://angular.io/)
+[![React](https://img.shields.io/badge/Framework-React-61DAFB?style=flat&logo=react&logoColor=white)](https://reactjs.org/)
+[![Next.js](https://img.shields.io/badge/Framework-Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat)](LICENSE)
 
 ## 📑 Table of Contents
