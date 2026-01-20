@@ -7,7 +7,7 @@ export const QUESTIONS = [
     key: "name",
     prompt: input,
     config: {
-      message: "Project name:",
+      message: " Project name:",
       default: "my-app",
       validate: v.folderName,
     },
@@ -16,7 +16,7 @@ export const QUESTIONS = [
     key: "version",
     prompt: input,
     config: {
-      message: "Initial version:",
+      message: " Initial version:",
       default: "0.1.0",
       validate: v.semver,
     },
@@ -25,7 +25,7 @@ export const QUESTIONS = [
     key: "framework",
     prompt: select,
     config: (choices) => ({
-      message: "Select a framework:",
+      message: " Select a framework:",
       choices,
     }),
   },
@@ -33,7 +33,7 @@ export const QUESTIONS = [
     key: "language",
     prompt: select,
     config: (choices) => ({
-      message: "Select a language:",
+      message: " Select a language:",
       choices,
     }),
     when: (answers) => NEEDS_LANGUAGE.includes(answers.framework),
@@ -43,7 +43,7 @@ export const QUESTIONS = [
     key: "initializeGit",
     prompt: confirm,
     config: () => ({
-      message: "Initialize a git repository?",
+      message: " Initialize a git repository?",
       default: true,
     }),
   },

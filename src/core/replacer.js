@@ -26,7 +26,7 @@ export async function updatePackageFiles(
     await fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
     console.log(
       chalk.green(
-        `Updated package.json → name: ${newName}, version: ${newVersion}`
+        `\n\nUpdated package.json → name: ${newName}, version: ${newVersion}`
       )
     );
   } catch (err) {
