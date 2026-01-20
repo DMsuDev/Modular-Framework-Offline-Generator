@@ -110,7 +110,7 @@ export async function generateProject(answers) {
           cwd: targetDir,
           stdio: "ignore",
         });
-        console.log(chalk.green("Initialized git repository."));
+        console.log(chalk.green("Initialized git repository.\n"));
       } catch (gitErr) {
         console.warn(
           chalk.yellow(
@@ -122,14 +122,6 @@ export async function generateProject(answers) {
 
     spinner.succeed("Project created successfully!");
 
-    const pm = answers.packageManager || "npm";
-    const installCmd = pm === "pnpm" ? "pnpm install" : pm === "yarn" ? "yarn" : "npm install";
-
-    console.log(
-      chalk.dim(
-        `\nNext steps:\n  cd ${projectName}\n  ${installCmd}\n  npm run dev\n`
-      )
-    );
   } catch (err) {
     spinner.fail("Failed to create project");
 

@@ -47,9 +47,3 @@ export const LANGUAGE_CHOICES = [
   { name: chalk.yellow.bold("JavaScript"), value: "-js" },
   { name: chalk.blue.bold("TypeScript"), value: "-ts" },
 ];
-
-export const PACKAGE_MANAGER_CHOICES = [
-  { name: chalk.white("npm"), value: "npm" },
-  { name: chalk.cyan("pnpm"), value: "pnpm" },
-  { name: chalk.yellow("yarn"), value: "yarn" },
-];

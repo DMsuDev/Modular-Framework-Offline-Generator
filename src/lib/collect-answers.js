@@ -2,14 +2,12 @@ import { QUESTIONS } from "../cli/prompts.js"; // adjust path as needed
 import {
   FRAMEWORK_CHOICES,
   LANGUAGE_CHOICES,
-  PACKAGE_MANAGER_CHOICES,
 } from "../cli/config/choices.js";
 import { error } from "../cli/config/log.js";
 
 const CHOICES_MAP = {
   framework: FRAMEWORK_CHOICES,
   language: LANGUAGE_CHOICES,
-  packageManager: PACKAGE_MANAGER_CHOICES,
   // future: extras: EXTRAS_CHOICES, etc.
 };
 

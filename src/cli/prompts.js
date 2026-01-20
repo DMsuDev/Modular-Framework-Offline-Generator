@@ -40,16 +40,6 @@ export const QUESTIONS = [
   },
 
   {
-    key: "packageManager",
-    prompt: select,
-    config: (choices) => ({
-      message: "Package manager:",
-      choices,
-      default: "npm",
-    }),
-  },
-
-  {
     key: "initializeGit",
     prompt: confirm,
     config: () => ({
@@ -58,5 +48,5 @@ export const QUESTIONS = [
     }),
   },
 
-  // Additional questions added above: packageManager and initializeGit
+  // Additional questions added above: initializeGit
 ];
