@@ -1,4 +1,4 @@
-import { input, select } from "@inquirer/prompts";
+import { input, select, confirm } from "@inquirer/prompts";
 import { NEEDS_LANGUAGE } from "./config/choices.js";
 import * as v from "./validators.js";
 
@@ -39,8 +39,6 @@ export const QUESTIONS = [
     when: (answers) => NEEDS_LANGUAGE.includes(answers.framework),
   },
 
-  // Examples of other common questions you might want to add: -Thank You AI :*/
-  /*
   {
     key: "packageManager",
     prompt: select,
@@ -50,6 +48,7 @@ export const QUESTIONS = [
       default: "npm",
     }),
   },
+
   {
     key: "initializeGit",
     prompt: confirm,
@@ -58,5 +57,6 @@ export const QUESTIONS = [
       default: true,
     }),
   },
-  */
+
+  // Additional questions added above: packageManager and initializeGit
 ];
