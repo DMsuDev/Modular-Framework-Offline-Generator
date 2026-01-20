@@ -1,10 +1,15 @@
 import { QUESTIONS } from "../cli/prompts.js"; // adjust path as needed
-import { FRAMEWORK_CHOICES, LANGUAGE_CHOICES } from "../cli/config/choices.js";
+import {
+  FRAMEWORK_CHOICES,
+  LANGUAGE_CHOICES,
+  PACKAGE_MANAGER_CHOICES,
+} from "../cli/config/choices.js";
 import { error } from "../cli/config/log.js";
 
 const CHOICES_MAP = {
   framework: FRAMEWORK_CHOICES,
   language: LANGUAGE_CHOICES,
+  packageManager: PACKAGE_MANAGER_CHOICES,
   // future: extras: EXTRAS_CHOICES, etc.
 };
 
@@ -23,17 +28,17 @@ export async function collectAnswers() {
 
     let config;
 
-    // Handle dynamic config (when config is a function that needs choices)
+    // Handle dynamic config (when config is a function)
     if (typeof question.config === "function") {
       const choices = CHOICES_MAP[question.key];
 
-      if (!choices || !Array.isArray(choices)) {
-        throw new Error(
-          `No choices defined for dynamic question: ${question.key}`
-        );
+      // If choices are provided for this question, pass them to the config function
+      if (choices && Array.isArray(choices)) {
+        config = question.config(choices);
+      } else {
+        // Otherwise call function without arguments (e.g., confirm prompts)
+        config = question.config();
       }
-
-      config = question.config(choices);
     } else {
       // Static questions (input, confirm, etc.) → safe copy
       config = { ...question.config };
