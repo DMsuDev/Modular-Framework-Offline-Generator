@@ -6,6 +6,7 @@ import { error } from "../cli/config/log.js";
 import { extractTemplate } from "./extractor.js";
 import { updatePackageFiles } from "./replacer.js";
 import { paths } from "../cli/config/paths.js";
+import { execSync } from "node:child_process";
 
 /**
  * Main function that generates the complete project
@@ -59,14 +60,74 @@ export async function generateProject(answers) {
       );
     }
 
-    // 4. Extract template & update package files
-    await extractTemplate(templatePath, targetDir);
+    // 4. Extract template into a temporary directory (atomic extraction)
+    const extractedTemp = await extractTemplate(templatePath);
+
+    // Copy extracted files to the target directory
+    try {
+      // Prefer fs.cp when available for recursive copy
+      if (fs.cp) {
+        await fs.cp(extractedTemp, targetDir, { recursive: true });
+      } else {
+        // Fallback: basic recursive copy using rename per-file (best-effort)
+        // Create the target dir already exists; move contents instead
+        const entries = await fs.readdir(extractedTemp);
+        for (const entry of entries) {
+          const src = path.join(extractedTemp, entry);
+          const dest = path.join(targetDir, entry);
+          await fs.rename(src, dest).catch(async () => {
+            // If rename fails (cross-device), fallback to copy + rm
+            const stat = await fs.stat(src);
+            if (stat.isDirectory()) {
+              await fs.mkdir(dest, { recursive: true });
+              // naive recursive copy
+              const sub = await fs.readdir(src);
+              for (const s of sub) {
+                await fs.cp ? await fs.cp(path.join(src, s), path.join(dest, s), { recursive: true }) : null;
+              }
+            } else {
+              const data = await fs.readFile(src);
+              await fs.writeFile(dest, data);
+            }
+          });
+        }
+      }
+    } finally {
+      // Cleanup extracted temp folder
+      try {
+        await fs.rm(extractedTemp, { recursive: true, force: true });
+      } catch {}
+    }
+
     await updatePackageFiles(targetDir, projectName, version);
 
+    // Initialize git if requested by the user
+    if (answers.initializeGit) {
+      try {
+        execSync("git init", { cwd: targetDir, stdio: "ignore" });
+        execSync("git add .", { cwd: targetDir, stdio: "ignore" });
+        execSync('git commit -m "Initial commit"', {
+          cwd: targetDir,
+          stdio: "ignore",
+        });
+        console.log(chalk.green("Initialized git repository."));
+      } catch (gitErr) {
+        console.warn(
+          chalk.yellow(
+            `Warning: git initialization failed: ${gitErr.message}`
+          )
+        );
+      }
+    }
+
     spinner.succeed("Project created successfully!");
+
+    const pm = answers.packageManager || "npm";
+    const installCmd = pm === "pnpm" ? "pnpm install" : pm === "yarn" ? "yarn" : "npm install";
+
     console.log(
       chalk.dim(
-        `\nNext steps:\n  cd ${projectName}\n  npm install\n  npm run dev\n`
+        `\nNext steps:\n  cd ${projectName}\n  ${installCmd}\n  npm run dev\n`
       )
     );
   } catch (err) {
