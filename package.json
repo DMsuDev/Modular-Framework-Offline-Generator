@@ -31,12 +31,12 @@
     "run": "node ./src/index.js"
   },
   "dependencies": {
+    "@inquirer/prompts": "^8.1.0",
     "7zip-min": "^2.1.0",
     "boxen": "^8.0.1",
     "chalk": "^5.6.2",
     "figlet": "^1.9.4",
     "gradient-string": "^3.0.0",
-    "inquirer": "^13.1.0",
     "ora": "^9.0.0"
   }
 }
