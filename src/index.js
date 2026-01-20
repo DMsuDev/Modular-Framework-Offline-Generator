@@ -15,10 +15,12 @@ async function main() {
   contentBox(highlight(contentMsg));
 
   await waitTime(200);
-
+  
   const answers = await collectAnswers();
-
+  
   await generateProject(answers);
+
+  await waitTime(250);
 
   clearConsole();
 
